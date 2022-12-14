@@ -261,7 +261,8 @@
 }
 
 /* Edit Profile */
-#profile-image-container {
+#profile-image-container,
+.profile-image-container {
   width: 150px;
   height: 150px;
   border: 6px solid rgb(230, 45, 45);
@@ -269,6 +270,11 @@
   background-size: cover;
   background-position: center;
   margin: 15px auto;
+}
+
+.profile-image-container {
+  width: 70px;
+  height: 70px;
 }
 
 #profile-image-container.review-image {
@@ -290,6 +296,12 @@
 
 #change-password-container {
   margin-top: 30px;
+}
+
+.edit-profile-page .card-btn,
+#add-game-container .card-brn,
+#review-form .card-btn {
+  width: auto;
 }
 
 /* Profile */
