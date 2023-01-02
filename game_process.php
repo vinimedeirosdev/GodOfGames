@@ -81,6 +81,32 @@ if ($type === "create") {
 
   }
 
+} else if($type === "delete") {
+
+  // Receive form data
+  $id = filter_input(INPUT_POST, "id");
+
+  $game = $gameDAO->findById($id);
+
+  if($game) {
+
+    // Check if the game belongs to the user
+    if($game->users_id === $userData->id) {
+
+      $gameDAO->destroy($game->id);
+
+    } else {
+
+      $message->setMessage("Invalid informations.", "error", "index.php");
+  
+    }
+
+  } else {
+
+    $message->setMessage("Invalid informations.", "error", "index.php");
+
+  }
+
 } else {
 
   $message->setMessage("Invalid informations.", "error", "index.php");

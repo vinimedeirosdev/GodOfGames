@@ -43,6 +43,7 @@ if (!empty($userDAO)) {
 }
 
 // Rescue the game reviews
+$alreadyReviewed = false;
 
 ?>
 
@@ -66,6 +67,7 @@ if (!empty($userDAO)) {
         <div class="offset-md-1 col-md-10" id="reviews-container">
             <h3 id="reviews-title">Reviews:</h3>
             <!-- Checks whether to activate the review for the user or not -->
+            <?php if(!empty($userData) && !$userOwnsGame && !$alreadyReviewed): ?>
             <div class="col-md-12" id="review-form-container">
                 <h4>Send your review:</h4>
                 <p class="page-description">Fill in the form with a note and comment about the game.</p>
@@ -95,6 +97,7 @@ if (!empty($userDAO)) {
                     <input type="submit" class="btn card-btn mt-2" value="Send Comment">
                 </form>
             </div>
+            <?php endif; ?>
             <!-- Comments -->
             <div class="col-md-12 review">
                 <div class="row">

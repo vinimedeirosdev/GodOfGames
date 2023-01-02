@@ -170,5 +170,13 @@ class GameDAO implements GameDAOInterface
 
   public function destroy($id)
   {
+    $stmt = $this->conn->prepare("DELETE FROM games WHERE id = :id");
+
+    $stmt->bindParam(":id", $id);
+
+    $stmt->execute();
+
+    // Success Menssage for the delete game
+    $this->message->setMessage("Game deleted successfully!", "success", "index.php");
   }
 }

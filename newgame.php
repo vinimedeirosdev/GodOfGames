@@ -34,19 +34,19 @@ $userData = $userDAO->verifyToken(true);
         <label class="mb-2" for="Category">Category:</label>
         <select name="category" id="category" class="form-control mb-1">
           <option value="">Select</option>
-          <option value="action">Action</option>
-          <option value="rpg">RPG</option>
-          <option value="horror">Horror</option>
-          <option value="adventure">Adventure</option>
-          <option value="race">Race</option>
-          <option value="fight">Fight</option>
-          <option value="puzzle">Puzzle</option>
-          <option value="survival">Survival</option>
-          <option value="fps">FPS</option>
-          <option value="simulation">Simulation</option>
-          <option value="sports">Sports</option>
-          <option value="strategy">Strategy</option>
-          <option value="party-games">Party Games</option>
+          <option value="Action">Action</option>
+          <option value="RPG">RPG</option>
+          <option value="Horror">Horror</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Race">Race</option>
+          <option value="Fight">Fight</option>
+          <option value="Puzzle">Puzzle</option>
+          <option value="Survival">Survival</option>
+          <option value="FPS">FPS</option>
+          <option value="Simulation">Simulation</option>
+          <option value="Sports">Sports</option>
+          <option value="Strategy">Strategy</option>
+          <option value="Party Games">Party Games</option>
         </select>
       </div>
       <div class="form-group mb-2">
