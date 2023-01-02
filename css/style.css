@@ -364,8 +364,8 @@
 }
 
 .game-image-container {
-  height: 400px;
-  min-width: 200px;
+  height: 650px;
+  width: 450px;
   background-position: center;
   background-size: cover;
 }

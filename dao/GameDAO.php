@@ -129,11 +129,9 @@ class GameDAO implements GameDAOInterface
       $game = $this->buildGame($gameData);
 
       return $game;
-    
     } else {
 
       return false;
-
     }
   }
 
@@ -166,6 +164,27 @@ class GameDAO implements GameDAOInterface
 
   public function update(Game $game)
   {
+    $stmt = $this->conn->prepare("UPDATE games SET 
+    title = :title,
+    description = :description,
+    image = :image,
+    category = :category,
+    trailer = :trailer,
+    length = :length 
+    WHERE id = :id");
+
+    $stmt->bindParam(":title", $game->title);
+    $stmt->bindParam(":description", $game->description);
+    $stmt->bindParam(":image", $game->image);
+    $stmt->bindParam(":trailer", $game->trailer);
+    $stmt->bindParam(":category", $game->category);
+    $stmt->bindParam(":length", $game->length);
+    $stmt->bindParam(":id", $game->id);
+
+    $stmt->execute();
+
+    // Success Menssage for the edit game
+    $this->message->setMessage("Game edited successfully!", "success", "dashboard.php");
   }
 
   public function destroy($id)
