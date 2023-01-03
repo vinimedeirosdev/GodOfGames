@@ -34,6 +34,22 @@ class ReviewDAO implements ReviewDAOInterface
 
     public function create(Review $review){
 
+        $stmt = $this->conn->prepare("INSERT INTO reviews (
+            rating, review, games_id, users_id
+            ) VALUES (
+                :rating, :review, :games_id, :users_id
+            )");
+      
+          $stmt->bindParam(":rating", $review->rating);
+          $stmt->bindParam(":review", $review->review);
+          $stmt->bindParam(":games_id", $review->games_id);
+          $stmt->bindParam(":users_id", $review->users_id);
+      
+          $stmt->execute();
+      
+          // Success Menssage for the add game
+          $this->message->setMessage("Review add successfully!", "success", "index.php");
+
     }
 
     public function getGamesReview($id){
