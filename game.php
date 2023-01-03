@@ -4,6 +4,7 @@ require_once("templates/header.php");
 // Check if the user is authenticated
 require_once("models/Game.php");
 require_once("dao/GameDAO.php");
+require_once("dao/ReviewDAO.php");
 
 // Take the game id
 $id = filter_input(INPUT_GET, "id");
@@ -11,6 +12,8 @@ $id = filter_input(INPUT_GET, "id");
 $game;
 
 $gameDao = new GameDAO($conn, $BASE_URL);
+
+$reviewDao = new ReviewDAO($conn, $BASE_URL);
 
 if (empty($id)) {
 
@@ -41,6 +44,9 @@ if (!empty($userDAO)) {
         $userOwnsGame = true;
     }
 }
+
+// Rescue the game reviews
+$gameReviews = $reviewDao->getGamesReview($id);
 
 // Rescue the game reviews
 $alreadyReviewed = false;
@@ -99,23 +105,12 @@ $alreadyReviewed = false;
             </div>
             <?php endif; ?>
             <!-- Comments -->
-            <div class="col-md-12 review">
-                <div class="row">
-                    <div class="col-md-1">
-                        <div class="profile-image-container review-image" style="background-image: url('<?= $BASE_URL ?>img/users/user.png')"></div>
-                    </div>
-                    <div class="col-md-9 author-details-container">
-                        <h4 class="author-name">
-                            <a href="#">Vini Teste</a>
-                        </h4>
-                        <p><i class="fas fa-star"></i>9</p>
-                        <div class="col-md-12">
-                            <p class="comment-title">Comment:</p>
-                            <p>This is the user comment</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php foreach($gameReviews as $review): ?>
+            <?php require_once("templates/user_review.php"); ?>
+            <?php endforeach; ?>
+            <?php if(count($gameReviews) == 0): ?>
+                <p class="empty-list">No reviews for this game yet...</p>
+            <?php endif; ?>
         </div>
     </div>
 </div>
