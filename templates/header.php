@@ -19,6 +19,8 @@ $userDAO = new UserDAO($conn, $BASE_URL);
 
 $userData = $userDAO->verifyToken(false);
 
+error_reporting(0);
+
 ?>
 
 <!DOCTYPE html>
