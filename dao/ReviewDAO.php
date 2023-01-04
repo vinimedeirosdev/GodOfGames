@@ -89,6 +89,19 @@ class ReviewDAO implements ReviewDAOInterface
 
     public function hasAlreadyReviewed($id, $users_id){
 
+        $stmt = $this->conn->prepare("SELECT * FROM reviews WHERE games_id = :games_id AND users_id = :users_id");
+
+        $stmt->bindParam(":games_id", $id);
+        $stmt->bindParam(":users_id", $users_id);
+
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     public function getRatings($id){

@@ -43,13 +43,14 @@ if (!empty($userDAO)) {
     if ($userData->id === $game->users_id) {
         $userOwnsGame = true;
     }
+
+    // Rescue the game reviews
+    $alreadyReviewed = $reviewDao->hasAlreadyReviewed($id, $userData->id);
+
 }
 
 // Rescue the game reviews
 $gameReviews = $reviewDao->getGamesReview($id);
-
-// Rescue the game reviews
-$alreadyReviewed = false;
 
 ?>
 
