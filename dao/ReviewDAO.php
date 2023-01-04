@@ -106,5 +106,29 @@ class ReviewDAO implements ReviewDAOInterface
 
     public function getRatings($id){
 
+        $stmt = $this->conn->prepare("SELECT * FROM reviews WHERE games_id = :games_id");
+
+        $stmt->bindParam(":games_id", $id);
+
+        $stmt->execute();
+        
+        if ($stmt->rowCount() > 0) {
+            
+            $rating = 0;
+
+            $reviews = $stmt->fetchAll();
+
+            foreach($reviews as $review) {
+                $rating += $review["rating"];
+            }
+
+            $rating = $rating / count($reviews);
+
+        } else {
+            $rating = "Not rated"; 
+        }
+
+        return $rating;
+
     }
 }

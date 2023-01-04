@@ -37,7 +37,7 @@ $userGames = $gameDAO->getGamesByUserId($userData->id);
         <tr>
           <td scope="row"><?= $game->id ?></td>
           <td><a href="<?= $BASE_URL ?>game.php?id=<?= $game->id ?>" class="table-game-title"><?= $game->title ?></a></td>
-          <td><i class="fas fa-star"></i>9</td>
+          <td><i class="fas fa-star"></i><?= $game->rating ?></td>
           <td class="actions-column">
             <a href="<?= $BASE_URL ?>editgame.php?id=<?= $game->id ?>" class="edit-btn">
               <i class="far fa-edit"></i> Edit

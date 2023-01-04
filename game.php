@@ -63,7 +63,7 @@ $gameReviews = $reviewDao->getGamesReview($id);
                 <span class="pipe"></span>
                 <span><?= $game->category ?></span>
                 <span class="pipe"></span>
-                <span><i class="fas fa-star"></i>9
+                <span><i class="fas fa-star"></i><?= $game->rating ?></span>
             </p>
             <iframe src="<?= $game->trailer ?>" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encryted-media; gyroscope;picture-in-picture" allowfullscreen></iframe>
             <p><?= $game->description ?></p>
