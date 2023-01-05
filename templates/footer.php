@@ -2,13 +2,13 @@
     <div id="social-container">
       <ul>
         <li>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://twitter.com/ViniStrife"><i class="fa-brands fa-twitter"></i></a>
         </li>
         <li>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/vini.strife/"><i class="fab fa-instagram"></i></a>
         </li>
         <li>
-          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/ViniStrife"><i class="fa-brands fa-github"></i></a>
         </li>
       </ul>
     </div>

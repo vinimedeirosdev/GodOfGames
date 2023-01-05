@@ -114,7 +114,7 @@ class ReviewDAO implements ReviewDAOInterface
         
         if ($stmt->rowCount() > 0) {
             
-            $rating = 0;
+            $rating = 0; 
 
             $reviews = $stmt->fetchAll();
 
