@@ -51,10 +51,9 @@ error_reporting(0);
         <img src="<?= $BASE_URL ?>img/logo.png" alt="GofOfGames" id="logo">
         <span id="godofgames-title">God Of Games</span>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
       <form action="<?= $BASE_URL ?>search.php" method="GET" id="search-form" class="form-inline my-2 my-lg-0">
         <input type="text" name="q" id="search" class="form-control mr-sm-2" type="search" placeholder="Search Games"
           aria-label="Search">

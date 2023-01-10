@@ -509,9 +509,13 @@
   }
 
   /* Home */
+  #godofgames-title {
+    font-size: 35px;
+  }
+
   #search-form {
-      width: 100%;
-      margin-left: 0;
+      width: 95%;
+      margin: auto;
   }
 
   #search-form .form-control {
@@ -519,7 +523,7 @@
   }
 
   .section-title {
-      font-size: 2.2rem;
+      font-size: 2.0rem;
       margin-bottom: 1rem;
   }
 
@@ -572,7 +576,7 @@
   }
 
   /* Dashboard */
-  #movies-dashboard {
+  #games-dashboard {
       padding: 0;
   }
 
@@ -588,5 +592,9 @@
   /* Edit Game */
   .game-image-container {
       margin-top: 1rem;
+  }
+
+  .fas.fa-bars {
+    color: rgb(230, 45, 45);
   }
 }
