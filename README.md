@@ -2,7 +2,7 @@
 
 A game listing site developed with PHP and MySQL, where we can create an account and add games, reviews and ratings.
 
-<img height="500em" src="https://github.com/ViniStrife/GodOfGames/blob/main/assets/Desktop-10-01-2023-19-38-14.gif"></img>
+<img height="500em" src="https://github.com/vinimedeirosdev/GodOfGames/blob/main/assets/Desktop-10-01-2023-19-38-14.gif"></img>
 
 ## Instructions:
 
